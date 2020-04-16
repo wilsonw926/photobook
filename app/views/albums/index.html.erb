@@ -1,1 +1,104 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700" rel="stylesheet">
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><%= Time.now.strftime("%m/%d/%Y") %></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                Welcome Claire!
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li class="active">
+                    <% if user_signed_in? %>
+                        <%= link_to('Logout', destroy_user_session_path, method: :delete, style: 'font-family: Verdana;') %>       
+                    <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+      <div class="swiper-container images-carousel">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="image-wrap">
+                  <div class="image-info">
+                    <h2 class="mb-3">Nature</h2>
+                    <a href="single.html" class="btn btn-outline-white py-2 px-4" style="width: 50%;">See Album</a>
+                  </div>
+                  <%= image_tag("bg-01") %>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-wrap">
+                  <div class="image-info">
+                    <h2 class="mb-3">Portrait</h2>
+                    <a href="single.html" class="btn btn-outline-white py-2 px-4" style="width: 50%;">See Album</a>
+                  </div>
+                  <%= image_tag("bg-01") %>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-wrap">
+                  <div class="image-info">
+                    <h2 class="mb-3">People</h2>
+                    <a href="single.html" class="btn btn-outline-white py-2 px-4" style="width: 50%;">See Album</a>
+                  </div>
+                  <%= image_tag("bg-01") %>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="image-wrap">
+                  <div class="image-info">
+                    <h2 class="mb-3">Architecture</h2>
+                    <a href="single.html" class="btn btn-outline-white py-2 px-4" style="width: 50%;">See Album</a>
+                  </div>
+                  <%= image_tag("bg-01") %>
+                </div>
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </div>
+
+  <%= javascript_include_tag "album/jquery-3.3.1.min.js" %>
+  <%= javascript_include_tag "album/jquery-migrate-3.0.1.min.js" %>
+  <%= javascript_include_tag "album/jquery-ui.js" %>
+  <%= javascript_include_tag "album/popper.min.js" %>
+  <%= javascript_include_tag "album/bootstrap.min.js" %>
+  <%= javascript_include_tag "album/owl.carousel.min.js" %>
+  <%= javascript_include_tag "album/jquery.stellar.min.js" %>
+  <%= javascript_include_tag "album/jquery.countdown.min.js" %>
+  <%= javascript_include_tag "album/jquery.magnific-popup.min.js" %>
+  <%= javascript_include_tag "album/bootstrap-datepicker.min.js" %>
+  <%= javascript_include_tag "album/swiper.min.js" %>
+  <%= javascript_include_tag "album/aos.js" %>
+  <%= javascript_include_tag "album/picturefill.min.js" %>
+  <%= javascript_include_tag "album/lightgallery-all.min.js" %>
+  <%= javascript_include_tag "album/jquery.mousewheel.min.js" %>
+  <%= javascript_include_tag "album/main.js" %>
+  </body>
+</html>
