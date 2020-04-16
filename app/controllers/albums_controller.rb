@@ -1,7 +1,11 @@
 class AlbumsController < ApplicationController
     
     def index
-        @albums = Album.all
+        if user_signed_in?
+            @albums = Album.all
+        else
+            redirect_to new_user_session_path
+        end
     end
 
     def show
