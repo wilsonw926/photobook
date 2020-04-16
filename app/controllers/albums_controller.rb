@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
     
     def index
-        if user_signed_in?
+        if current_user
             @albums = Album.all
         else
             redirect_to new_user_session_path
