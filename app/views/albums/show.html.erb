@@ -12,7 +12,7 @@
       <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Welcome</a></h1>
+            <h1 class="mb-0"><%= link_to('Home', root_path, class: "text-black h2 mb-0") %></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -25,7 +25,7 @@
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 <li class="active">
                     <% if user_signed_in? %>
-                        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>       
+                        <%= link_to('Logout', destroy_user_session_path, method: :delete, style: 'font-family: Verdana;') %>       
                     <% end %>
                 </li>
               </ul>

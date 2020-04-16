@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
     
     def index
         if current_user
-            @albums = Album.all
+            @albums = current_user.albums
         else
             redirect_to new_user_session_path
         end
