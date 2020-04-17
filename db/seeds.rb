@@ -16,6 +16,9 @@ def create_albums
       user_id: 1
     )
     a.album_cover_photo.attach(io: File.open("app/assets/images/bg-01.jpg"), filename: 'bg-01.jpg')
+    a.images.attach(io: File.open("app/assets/images/bg-01.jpg"), filename: 'bg-01.jpg')
+    a.images.attach(io: File.open("app/assets/images/login_photo.jpg"), filename: 'login_photo.jpg')
+    a.images.attach(io: File.open("app/assets/images/nature_big.jpg"), filename: 'nature_big.jpg')
   end
   puts "created albums."
 end

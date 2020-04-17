@@ -9,7 +9,11 @@ class AlbumsController < ApplicationController
     end
 
     def show
-        @albums = Album.find(params[:id])
+        if current_user
+            @album = Album.find(params[:id])
+        else
+            redirect_to new_user_session_path
+        end
     end
 
     def edit
