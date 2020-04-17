@@ -34,6 +34,10 @@ Rails.application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   config.action_controller.asset_host = ENV['CLOUDFRONT_ENDPOINT']
 
+  config.serve_static_files = true
+  config.assets.digest = true
+  config.assets.enabled = true
+  config.assets.initialize_on_precompile = true
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
@@ -91,4 +95,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+end
+
+AssetSync.configure do |config|
+  config.fog_provider = "AWS"
+  config.aws_access_key_id = Rails.application.credentials.dig(:aws, :access_key_id)
+  config.aws_secret_access_key = Rails.application.credentials.dig(:aws, :secret_access_key)
+  config.fog_directory = "weggy"
+  config.fog_region = "us-west-1"
 end

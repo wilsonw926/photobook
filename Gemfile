@@ -70,3 +70,5 @@ gem "font-awesome-rails"
 gem "rb-readline"
 gem "aws-sdk-s3", require: false
 gem "image_processing"
+gem "fog-aws"
+gem "asset_sync"
