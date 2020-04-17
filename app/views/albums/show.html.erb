@@ -50,7 +50,7 @@
       <div class="row" id="lightgallery">
         <% @album.images.each do |a| %>
           <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 item" data-aos="fade" data-src="<%= url_for(a) %>">
-            <a href="#"><%= image_tag url_for(a), class: "img-fluid", style:"height: 100%; image-orientation: from-image;" %></a>
+            <a href="#"><%= image_tag a.variant(auto_orient: true), class: "img-fluid", style:"height: 100%" %></a>
           </div>
         <% end %>
       </div>

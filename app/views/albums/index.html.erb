@@ -47,7 +47,7 @@
                     <%= link_to("See Album", a, class: "btn btn-outline-white py-2 px-4", style: "width: 50%;") %>
                   </div>
                   <% if a.album_cover_photo.attached? %>
-                    <%= image_tag url_for(a.album_cover_photo), style: "image-orientation: from-image;" %>
+                    <%= image_tag a.album_cover_photo.variant(auto_orient: true) %>
                   <% end %>
                 </div>
               </div>
